@@ -16,4 +16,19 @@ class Solution {
 
         return profit;
     }
+
+    // LINK - https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+    // Multiple trades allowed.
+    public int maxProfit(int[] prices) {
+        int profit = 0, curr = Integer.MAX_VALUE;
+
+        for(int price : prices) {
+            if(price > curr) {
+                profit += price - curr;
+            }
+            curr = price;
+        }
+
+        return profit;
+    }
 }
